@@ -23,10 +23,6 @@ class ImagePipeline(ImagesPipeline):
         path = "./"+name+"/"+file_name
         return path
 
-        # results为item对应的图片下载的结果，他是一个list，每个元素为元组，并包含了下载成功和失败的信息
-
-
-
     def item_completed(self, results, item, info):
         # 获取图片地址path
         # 图片下载完成后，执行该方法

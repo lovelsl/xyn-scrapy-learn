@@ -53,9 +53,6 @@ class ImageSpider(scrapy.Spider):
                 jpgname = None
             else:
                 jpgname = jpgname[0]
-            print("--------------->",jpgname)
-            #print("--------------->", type(jpgname))
-            #print("--------------->", jpgname[0])
             imageitem["name"] = jpgname
             yield imageitem
 
