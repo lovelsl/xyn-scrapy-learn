@@ -114,8 +114,8 @@ MONGODB_COLLECTION = "image"
 # # item会依次经过下面定义的管道文件  数字决定多个管道的经过顺序
 
 ITEM_PIPELINES = {
-    #'image.pipelines.ImagePipeline': 300,
-    "scrapy.pipelines.images.ImagesPipeline": 300
+    'image.pipelines.ImagePipeline': 300,
+    #"scrapy.pipelines.images.ImagesPipeline": 300
 }
 
 IMAGES_STORE = r"D:\github-work\scrapy-learn\image\pic"

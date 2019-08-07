@@ -45,9 +45,18 @@ class ImageSpider(scrapy.Spider):
         imagepath = "//img[@src]"
         selector = response.xpath(imagepath)
         for sub in selector:
-            jpgurl = sub.xpath('@src').extract()
+            jpgurl = sub.xpath('@src').extract()[0]
             imageitem = ImageItem()
             imageitem["url"] = jpgurl
+            jpgname = sub.xpath('@alt').extract()
+            if jpgname == [] or jpgname == None or jpgname == "":
+                jpgname = None
+            else:
+                jpgname = jpgname[0]
+            print("--------------->",jpgname)
+            #print("--------------->", type(jpgname))
+            #print("--------------->", jpgname[0])
+            imageitem["name"] = jpgname
             yield imageitem
 
         #第二个for循环，打开本页面的子页面，形成递归打开页面
